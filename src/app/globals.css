@@ -26,6 +26,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@layer components {
+  * {
+    @apply outline-0;
+  }
+  .form-input {
+    @apply p-2 bg-transparent border-[0.15rem] w-[18rem] border-gray-600 rounded-xl;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
