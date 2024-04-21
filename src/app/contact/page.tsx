@@ -70,7 +70,6 @@ export default function Page() {
           />
         </div>
 
-
         <div>
           <button
             className="px-3 py-1 bg-zinc-800 hover:bg-zinc-700 rounded-xl"
