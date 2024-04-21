@@ -32,7 +32,7 @@ export default function Page() {
         </h2>
 
         <div className="flex flex-col">
-          <span>{errors?.name?.message}</span>
+          <span className="error-input">{errors?.name?.message}</span>
           <input
             type="text"
             placeholder="Name *"
@@ -42,7 +42,7 @@ export default function Page() {
         </div>
 
         <div className="flex flex-col">
-          <span>{errors?.email?.message}</span>
+          <span className="error-input">{errors?.email?.message}</span>
           <input
             type="text"
             placeholder="Email *"
@@ -52,7 +52,7 @@ export default function Page() {
         </div>
 
         <div className="flex flex-col">
-          <span>{errors?.num?.message}</span>
+          <span className="error-input">{errors?.num?.message}</span>
           <input
             type="text"
             placeholder="Phone *"
@@ -62,7 +62,7 @@ export default function Page() {
         </div>
 
         <div className="flex flex-col">
-          <span>{errors?.message?.message}</span>
+          <span className="error-input">{errors?.message?.message}</span>
           <textarea
             placeholder="Message *"
             {...register("message", {required: "Required value"})}

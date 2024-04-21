@@ -33,6 +33,9 @@ body {
   .form-input {
     @apply p-2 bg-transparent border-[0.15rem] w-[18rem] border-gray-600 rounded-xl;
   }
+  .error-input {
+    @apply text-sm px-1 line-clamp-1 break-all pb-1 text-red-500 font-semibold;
+  }
 }
 
 @layer utilities {
