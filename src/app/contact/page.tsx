@@ -1,6 +1,6 @@
 'use client';
 import {z} from "zod";
-import { zodResolver } from '@hookform/resolvers/zod';
+import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from "react-hook-form";
 
 const formScheme = z.object({
@@ -31,32 +31,45 @@ export default function Page() {
           Contact
         </h2>
 
-        <input
-          type="text"
-          placeholder="Name"
-          {...register('name')}
-          className="form-input"
-        />
+        <div className="flex flex-col">
+          <span>{errors?.name?.message}</span>
+          <input
+            type="text"
+            placeholder="Name *"
+            {...register("name", {required: "Required value"})}
+            className="form-input"
+          />
+        </div>
 
-        <input
-          type="text"
-          placeholder="Email"
-          {...register('email')}
-          className="form-input"
-        />
+        <div className="flex flex-col">
+          <span>{errors?.email?.message}</span>
+          <input
+            type="text"
+            placeholder="Email *"
+            {...register("email", {required: "Required value"})}
+            className="form-input"
+          />
+        </div>
 
-        <input
-          type="text"
-          placeholder="Phone"
-          {...register('num')}
-          className="form-input"
-        />
+        <div className="flex flex-col">
+          <span>{errors?.num?.message}</span>
+          <input
+            type="text"
+            placeholder="Phone *"
+            {...register("num", {required: "Required value"})}
+            className="form-input"
+          />
+        </div>
 
-        <textarea
-          placeholder="Message"
-          {...register('message')}
-          className="form-input resize-none h-[8rem]"
-        />
+        <div className="flex flex-col">
+          <span>{errors?.message?.message}</span>
+          <textarea
+            placeholder="Message *"
+            {...register("message", {required: "Required value"})}
+            className="form-input resize-none h-[8rem]"
+          />
+        </div>
+
 
         <div>
           <button
