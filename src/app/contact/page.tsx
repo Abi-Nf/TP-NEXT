@@ -6,7 +6,7 @@ import {useForm} from "react-hook-form";
 const formScheme = z.object({
   name: z.string().min(2),
   email: z.string().email(),
-  num: z.string(),
+  num: z.string().regex(/^(\+)?(\d+)(\s?|-?)(\d+)(\s?|-?)(\d+)(\s?|-?)(\d+)(\s?|-?)$/g, "Invalid phone number"),
   message: z.string().min(2)
 });
 
