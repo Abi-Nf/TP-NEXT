@@ -15,7 +15,7 @@ export const Toast = ({ open, onTimeout, data: { title, description } = {} }: Pr
       const t = setTimeout(() => {
         onTimeout();
         clearTimeout(t);
-      }, 2000);
+      }, 4000);
     }
   }, [ open, onTimeout ]);
   if(!open) return null;
