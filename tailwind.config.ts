@@ -13,6 +13,21 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        toast: "toast-animation linear 0.5s 0.1s normal forwards"
+      },
+      keyframes: {
+        "toast-animation": {
+          "0%": {
+            opacity: "0",
+            right: "-100%",
+          },
+          "100%": {
+            opacity: "1",
+            right: "0"
+          }
+        }
+      }
     },
   },
   plugins: [],

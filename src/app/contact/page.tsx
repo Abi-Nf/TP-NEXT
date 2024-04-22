@@ -1,7 +1,9 @@
 'use client';
+import {useState} from "react";
 import {z} from "zod";
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from "react-hook-form";
+import {Toast} from "@/src/components/toast";
 
 const formScheme = z.object({
   name: z.string().min(2),
@@ -14,15 +16,28 @@ export default function Page() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors }
   } = useForm<z.infer<typeof formScheme>>({
     resolver: zodResolver(formScheme)
   });
 
-  const handleDataToSubmit = (data: z.infer<typeof formScheme>) => {}
+  const [openToast, setOpenToast] = useState(false);
+  const handleDataToSubmit = (data: z.infer<typeof formScheme>) => {
+    setOpenToast(true);
+  }
 
   return (
     <div className="flex h-full w-full items-center justify-center">
+      <Toast
+        open={openToast}
+        onTimeout={() => setOpenToast(false)}
+        data={{
+          title: `${watch("name")} sent a message contact`,
+          description: watch("message")
+        }}
+      />
+
       <form
         className="flex flex-col gap-3"
         onSubmit={handleSubmit(handleDataToSubmit)}
